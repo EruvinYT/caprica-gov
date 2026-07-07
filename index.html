@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official archives and government information portal for the Republic of Caprica. Explore colonial legislature, executive ministries, legislation drafts, national news, and the Colonial Constitution.">
+  <meta name="keywords" content="Republic of Caprica, Colonial Government, Twelve Colonies of Kobol, Laura Roslin, Gaius Baltar, Colonial Senate, Caprica City, Constitution">
+  <meta name="author" content="Colonial Ministry of Information">
+  <title>Official Portal of the Republic of Caprica Government</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Sticky Global Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      
+      <!-- Country Brand Emblem -->
+      <a href="#/home" class="logo-link">
+        <img src="images/seal.png" alt="Republic of Caprica Seal" class="gov-logo">
+        <div class="logo-text">
+          <span class="logo-title">Republic of Caprica</span>
+          <span class="logo-subtitle">Official State Portal</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu-list">
+        <a href="#/home" class="nav-link">Home</a>
+        <a href="#/constitution" class="nav-link">Constitution</a>
+        <a href="#/legislation" class="nav-link">Legislation</a>
+        <a href="#/officials" class="nav-link">Officials</a>
+        <a href="#/news" class="nav-link">Press Room</a>
+      </nav>
+
+      <!-- Header Action Items (Search, Saved Research, Theme) -->
+      <div class="header-actions">
+        
+        <!-- Autocomplete Global Search Bar -->
+        <div class="search-wrapper">
+          <span class="search-icon">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </span>
+          <input type="text" id="global-search-input" class="search-input" placeholder="Search state archives..." autocomplete="off">
+          
+          <!-- Dropdown result list -->
+          <div class="search-results-dropdown" id="search-dropdown"></div>
+        </div>
+
+        <!-- Research Folder Trigger -->
+        <button class="action-btn" id="open-research-btn" title="Saved Research Folder">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm0 8H7v-2h10v2z"/></svg>
+          <span class="badge" id="research-badge">0</span>
+        </button>
+
+        <!-- Dark/Light Theme Switcher -->
+        <button class="action-btn" id="theme-toggle" title="Toggle Visual Mode">
+          <!-- Populated by JS -->
+          <svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/></svg>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-nav-toggle" id="mobile-menu-btn" title="Toggle Navigation">
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content container">
+
+    <!-- ================= PAGE: HOME ================= -->
+    <section class="page-section" id="section-home">
+      
+      <!-- Welcome Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-subtitle">Official Administrative Node</div>
+        <h1 class="hero-title">Welcome to the Republic of Caprica</h1>
+        <p class="hero-desc">The centralized public terminal for the legislature, constitution archives, ministerial records, and official state releases of the Twelve Colonies of Kobol governance systems.</p>
+        
+        <!-- Fictional Country Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-val">Caprica City</span>
+            <span class="stat-lbl">Federal Capital</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">4.8 Billion</span>
+            <span class="stat-lbl">Census Population</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">L-2026-6A</span>
+            <span class="stat-lbl">Active Senate Session</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-val">Gold Standard</span>
+            <span class="stat-lbl">Colonial Treasury Peg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Layout Columns -->
+      <div class="dashboard-grid">
+        
+        <!-- Left: News & Gazette Releases -->
+        <div>
+          <div class="widget-panel">
+            <div class="widget-title-container">
+              <h2 class="widget-title">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                Latest Press Releases & Official Gazettes
+              </h2>
+              <a href="#/news" style="font-size: 0.85rem; font-weight: 600;">Browse All Gazette Archives →</a>
+            </div>
+            <div class="news-grid" id="dash-news-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Administrative Welcome Address -->
+          <div class="widget-panel">
+            <div class="widget-title-container">
+              <h2 class="widget-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Notice to Scholars & Researchers
+              </h2>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">This public archive provides access to the complete legal code, legislative progress reports, executive structures, and the founding constitution of the Republic of Caprica.</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">You can use the built-in <strong>Research Folder</strong> bookmark feature to collect and compile articles, politician biographies, and active laws. Once saved, you can export your findings in Markdown format for offline study and documentation.</p>
+          </div>
+        </div>
+
+        <!-- Right: Legislative Highlights tracker -->
+        <div>
+          <div class="widget-panel">
+            <div class="widget-title-container">
+              <h2 class="widget-title">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                Active Legislation Tracker
+              </h2>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Pending bills undergoing review or voting sequences in the Bicameral Congress.</p>
+            <div class="leg-list-container" id="dash-bills-list" style="max-height: none;">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= PAGE: CONSTITUTION ================= -->
+    <section class="page-section" id="section-constitution">
+      <div style="margin-bottom: 32px;">
+        <h1 class="section-header">Constitution of the Twelve Colonies</h1>
+        <p style="color: var(--text-muted); margin-top: 8px;">The founding legal framework establishing the union of the colonies and the governing powers of Caprica.</p>
+      </div>
+
+      <div class="constitution-layout">
+        
+        <!-- Sidebar Navigation Accordion -->
+        <aside class="const-sidebar" id="const-sidebar-nav">
+          <!-- Rendered via JS -->
+        </aside>
+
+        <!-- Document Viewer Content Area -->
+        <article class="const-document-view" id="const-doc-view">
+          <!-- Rendered via JS -->
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= PAGE: LEGISLATION ================= -->
+    <section class="page-section" id="section-legislation">
+      <div style="margin-bottom: 32px;">
+        <h1 class="section-header">Legislation Archives & House Records</h1>
+        <p style="color: var(--text-muted); margin-top: 8px;">Explore active draft bills under congress review and historic laws enacted by the presidential administration.</p>
+      </div>
+
+      <div class="leg-layout">
+        
+        <!-- Left: List of Bills and Laws -->
+        <aside class="leg-list-container" id="leg-list">
+          <!-- Rendered via JS -->
+        </aside>
+
+        <!-- Right: Expanded detailed timeline and legal code draft -->
+        <article class="leg-detail-container" id="leg-detail">
+          <!-- Rendered via JS -->
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= PAGE: GOVERNMENT OFFICIALS ================= -->
+    <section class="page-section" id="section-officials">
+      <div style="margin-bottom: 32px;">
+        <h1 class="section-header">Government Directories & Congress Members</h1>
+        <p style="color: var(--text-muted); margin-top: 8px;">Profiles and assignments of the executive cabinet, the Colonial Senators, and parliamentary representatives.</p>
+      </div>
+
+      <!-- Tab switching headers -->
+      <div class="tabs-navigation" id="officials-tabs">
+        <button class="tab-btn active" data-tab="executive">Executive & Cabinet</button>
+        <button class="tab-btn" data-tab="senate">Colonial Senate (12 seats)</button>
+        <button class="tab-btn" data-tab="parliament">Colonial Parliament (MPs)</button>
+      </div>
+
+      <!-- Filters (only visible for Senate & Parliament) -->
+      <div class="directory-controls" id="officials-filters" style="display: none;">
+        <div class="search-wrapper" style="width: 280px;">
+          <span class="search-icon">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </span>
+          <input type="text" id="off-search" class="search-input" placeholder="Search by politician name..." style="padding-top: 8px; padding-bottom: 8px;">
+        </div>
+        
+        <div class="filter-group">
+          <select id="filter-party" class="select-filter">
+            <option value="all">All Parties</option>
+          </select>
+          <select id="filter-colony" class="select-filter">
+            <option value="all">All Colonies</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Target Grid for Cards -->
+      <div id="officials-grid-container" class="officials-grid">
+        <!-- Rendered via JS -->
+      </div>
+
+    </section>
+
+    <!-- ================= PAGE: PRESS ROOM ================= -->
+    <section class="page-section" id="section-news">
+      <div style="margin-bottom: 32px;">
+        <h1 class="section-header">Colonial News Room & Press Releases</h1>
+        <p style="color: var(--text-muted); margin-top: 8px;">Public announcements, economic briefings, and orbital security newsletters released by the Ministry of Information.</p>
+      </div>
+
+      <div class="news-grid" id="news-grid-container">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SIDEBAR: RESEARCH DRAWER ================= -->
+  <aside class="research-drawer" id="research-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+        Research Folder
+      </h3>
+      <button class="drawer-close" id="close-research-btn" title="Close Drawer">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+
+    <!-- Scroll container for saved items -->
+    <div class="drawer-content" id="research-items-list">
+      <!-- Rendered via JS -->
+    </div>
+
+    <div class="drawer-footer">
+      <button class="export-btn" id="export-research-btn" style="display: none;">
+        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+        Export Research Notes (.md)
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= MODAL: FULL ARTICLE VIEW ================= -->
+  <div class="modal-overlay" id="news-modal-overlay">
+    <div class="modal-content">
+      <!-- Rendered via JS dynamically -->
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/seal.png" alt="Republic of Caprica Seal" class="footer-logo">
+            <span class="footer-brand-title">Republic of Caprica</span>
+          </div>
+          <p style="font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); margin-top: 8px;">
+            This is the official public archives terminal of the colonial state administrative network of Caprica. Dedicated to transparency, legal documentation, and academic research.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Government Branches</span>
+          <ul class="footer-links">
+            <li><a href="#/officials?tab=executive">Executive Cabinet</a></li>
+            <li><a href="#/officials?tab=senate">Colonial Senate</a></li>
+            <li><a href="#/officials?tab=parliament">Colonial Parliament</a></li>
+            <li><a href="#/legislation">Supreme Tribunal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Federal Resources</span>
+          <ul class="footer-links">
+            <li><a href="#/constitution">Colonial Constitution</a></li>
+            <li><a href="#/legislation">Enacted Statutes</a></li>
+            <li><a href="#/news">Official Announcements</a></li>
+            <li><a href="#/home">Portal Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Security & Terms</span>
+          <ul class="footer-links">
+            <li><a href="#/legislation?id=leg-privacy-act">Privacy Shield Accord</a></li>
+            <li><a href="#/home">Academic Usage Terms</a></li>
+            <li><a href="#/home">Ministry API Directory</a></li>
+            <li><a href="#/home">Systems Status</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Republic of Caprica. All colonial archives and documents are in public domain under Article V of the Reconstruction Accords.</span>
+        <span class="text-gold">Motto: "Unity, Liberty, Sovereignty"</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript Modules -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
